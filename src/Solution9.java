@@ -130,19 +130,20 @@ public class Solution9 {
     /* 94 */
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res = new LinkedList<Integer>();
-        if (root == null)
-            return res;
-        helper94(root, res);
-        return res;
-    }
-    public void helper94(TreeNode node, List<Integer> res) {
-        if (node == null)
-            return;
-        else {
-            helper94(node.left, res);
-            res.add(node.val);
-            helper94(node.right, res);
+        if (root == null) return res;
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        TreeNode node = root;
+        while (! stack.isEmpty() || node != null) {
+            if (node != null) {
+                stack.push(node);
+                node = node.left;
+            } else {
+                node = stack.pop();
+                res.add(node.val);
+                node = node.right;
+            }
         }
+        return res;
     }
     /* 95 */
     public List<TreeNode> generateTrees(int n) {

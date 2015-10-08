@@ -151,10 +151,9 @@ public class Solution8 {
         }
         return maxArea;
     }
-    /* 85 */
-    public int maximalRectangle(char[][] matrix) {
 
-    }
+
+
     /* 86 */
     public ListNode partition(ListNode head, int x) {
         ListNode dummy = new ListNode(-1);
@@ -212,8 +211,5 @@ public class Solution8 {
             n --;
         }
     }
-    /* 89 */
-    public List<Integer> grayCode(int n) {
 
-    }
 }
