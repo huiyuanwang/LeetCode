@@ -3,12 +3,15 @@
  */
 public class Main {
     public static void main(String[] args) {
-        int[] input = {1, 0, 0, 1, 0, 0, 1, 0};
+        int[] input = {1, 4, 4};
 
-        Solution20 solution = new Solution20();
-        Boolean res = solution.isHappy(2);
+        //Solution21 solution = new Solution21();
+        //int res = solution.minSubArrayLen(4, input);
         //int res = flipWord(input);
+
+        long res = getLCM(Integer.MAX_VALUE, Integer.MAX_VALUE);
         System.out.println(res);
+
     }
 
     public static int flipWord(int[] arr) {
@@ -30,6 +33,23 @@ public class Main {
             max = Math.max(max, total);
         }
         return count + max;
+    }
+
+    public static long getLCM (int a, int b) {
+        long product = (long) a * b;
+        System.out.println(product);
+        if (b > a) {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+        while (b > 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        System.out.println(a);
+        return product / a;
     }
 
 }

@@ -129,6 +129,23 @@ public class Solution14 {
         }
         return res;
     }
+    public List<Integer> postorderTraversal2(TreeNode root) {
+        List<Integer> res = new LinkedList<Integer>();
+        if (root == null) return res;
+        Stack<Integer> temp = new Stack<>();
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        stack.push(root);
+        while (! stack.isEmpty()) {
+            TreeNode cur = stack.pop();
+            temp.push(cur.val);
+            if (cur.left != null) stack.push(cur.left);
+            if (cur.right != null) stack.push(cur.right);
+        }
+        while (! temp.isEmpty()) {
+            res.add(temp.pop());
+        }
+        return res;
+    }
     /* 147 */
     public ListNode insertionSortList(ListNode head) {
         if (head == null || head.next == null) return head;

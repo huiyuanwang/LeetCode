@@ -1,4 +1,6 @@
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * Created by why on 9/8/15.
@@ -131,5 +133,57 @@ public class Solution20 {
             fakeHead.next = next;
         }
         return fakeHead.next;
+    }
+    /* 207 */
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+        if (prerequisites == null || prerequisites.length == 0 || prerequisites[0].length == 0) return true;
+        int[] record = new int[numCourses];
+        for (int[] prerequisite : prerequisites) {
+            record[prerequisite[0]]++;
+        }
+        Queue<Integer> queue = new LinkedList<Integer>();
+        for (int i = 0; i < numCourses; i ++) {
+            if (record[i] == 0) {
+                queue.offer(i);
+                System.out.println(i);
+            }
+        }
+        int takeNum = queue.size();
+        while (! queue.isEmpty()) {
+            int course = queue.poll();
+            for (int[] prerequisite : prerequisites) {
+                if (prerequisite[1] == course) {
+                    record[prerequisite[0]]--;
+                    if (record[prerequisite[0]] == 0) {
+                        takeNum++;
+                        queue.offer(prerequisite[0]);
+                        System.out.println(prerequisite[0]);
+                    }
+                }
+            }
+        }
+        return takeNum == numCourses;
+    }
+    /* 209 */
+    public int minSubArrayLen(int s, int[] nums) {
+        if (nums == null || nums.length == 0) return 0;
+        int start = 0, end = 0;
+        int res = Integer.MAX_VALUE;
+        boolean found = false;
+        int sum = nums[0];
+        while (end < nums.length) {
+            if (sum < s) {
+                end ++;
+                if (end < nums.length) {
+                    sum += nums[end];
+                }
+            } else {
+                found = true;
+                sum -= nums[start];
+                res = Math.min(res, end - start + 1);
+                start ++;
+            }
+        }
+        return found ? res : 0;
     }
 }
