@@ -1,5 +1,4 @@
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * Created by why on 10/8/15.
@@ -44,7 +43,37 @@ public class Solution21 {
         if (index == numCourses) return res;
         else return new int[0];
     }
-
+    /* 212 */
+    public List<String> findWords(char[][] board, String[] words) {
+        List<String> res = new LinkedList<>();
+        if (words == null || words.length == 0) return res;
+        Trie trie = new Trie();
+        for (String word: words) {
+            trie.insert(word);
+        }
+        int m = board.length;
+        int n = board[0].length;
+        for (int i = 0; i < m; i ++) {
+            for (int j = 0; j < n; j ++) {
+                helper(board, "", i, j, trie, res);
+            }
+        }
+        return res;
+    }
+    public void helper(char[][] board, String word, int i, int j, Trie trie, List<String> res) {
+        int m = board.length - 1, n = board[0].length - 1;
+        if (i < 0 || i > m || j < 0 || j > n) return;
+        word += board[i][j];
+        if (! trie.startsWith(word)) return;
+        if (trie.search(word)) res.add(word);
+        char temp = board[i][j];
+        board[i][j] = '*';
+        helper(board, word, i + 1, j, trie, res);
+        helper(board, word, i - 1, j, trie, res);
+        helper(board, word, i, j + 1, trie, res);
+        helper(board, word, i, j - 1, trie, res);
+        board[i][j] = temp;
+    }
     /* 213 */
     public int rob(int[] nums) {
         if (nums == null || nums.length == 0) return 0;
@@ -68,5 +97,43 @@ public class Solution21 {
         }
 
         return Math.max(dl[nums.length - 1], dh[nums.length - 1]);
+    }
+    /* 216 */
+    public List<List<Integer>> combinationSum3(int k, int n) {
+        List<List<Integer>> res = new LinkedList<List<Integer>>();
+        helper(n, k, 1, new LinkedList<Integer>(), res);
+        return res;
+    }
+    public void helper(int target, int num, int index, List<Integer> item, List<List<Integer>> res) {
+        if (target < 0 || index > 10) return;
+        if (num == 0 && target == 0) {
+            res.add(new LinkedList<Integer>(item));
+            return;
+        } else if (num == 0) return;
+
+        helper(target, num, index + 1, new LinkedList<Integer>(item), res);
+        target -= index;
+        item.add(index);
+        helper(target, num - 1, index + 1, item, res);
+    }
+    /* 217 */
+    public boolean containsDuplicate(int[] nums) {
+        HashSet<Integer> set = new HashSet<Integer>();
+        for (int elem: nums) {
+            if (set.contains(elem)) return true;
+            else set.add(elem);
+        }
+        return false;
+    }
+    /* 219 */
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for (int i = 0; i < nums.length; i ++) {
+            if (map.containsKey(nums[i])) {
+                if (i - map.get(nums[i]) <= k) return true;
+            }
+            map.put(nums[i], i);
+        }
+        return false;
     }
 }

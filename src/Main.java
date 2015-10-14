@@ -4,13 +4,17 @@
 public class Main {
     public static void main(String[] args) {
         int[] input = {1, 4, 4};
+        MyStack stack = new MyStack();
+        stack.push(1);
+        stack.pop();
+        System.out.println(stack.empty());
 
         //Solution21 solution = new Solution21();
         //int res = solution.minSubArrayLen(4, input);
         //int res = flipWord(input);
 
-        long res = getLCM(Integer.MAX_VALUE, Integer.MAX_VALUE);
-        System.out.println(res);
+        //long res = getLCM(Integer.MAX_VALUE, Integer.MAX_VALUE);
+        //System.out.println(res);
 
     }
 
