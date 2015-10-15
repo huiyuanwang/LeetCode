@@ -3,7 +3,7 @@ import java.util.*;
 /**
  * Created by why on 10/15/15.
  */
-public class Airbnb {
+public class ATest {
     public static List<List<String>> searchPalin (List<String> input) {
         List<List<String>> res = new LinkedList<>();
         if (input == null || input.size() == 0) return res;

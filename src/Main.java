@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -17,9 +16,9 @@ public class Main {
                 //iter.remove();
             }
         }
-        List<String> output1 = Airbnb.parseCSV("Jane,Roberts,janer@msn.com,\"San Francisco, CA\",0");
+        List<String> output1 = ATest.parseCSV("Jane,Roberts,janer@msn.com,\"San Francisco, CA\",0");
         System.out.println(output1);
-        List<String> output2 = Airbnb.parseCSV("\"Alexandra \"\"Alex\"\"\",Menendez,alex.menendez@gmail.com,Miami,1");
+        List<String> output2 = ATest.parseCSV("\"Alexandra \"\"Alex\"\"\",Menendez,alex.menendez@gmail.com,Miami,1");
         System.out.println(output2);
 
     }
