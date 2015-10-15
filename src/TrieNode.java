@@ -7,6 +7,7 @@ public class TrieNode {
     char ch;
     HashMap<Character, TrieNode> children = new HashMap<Character, TrieNode>();
     boolean isLeaf;
+    String word;
 
     // Initialize your data structure here.
     public TrieNode() {

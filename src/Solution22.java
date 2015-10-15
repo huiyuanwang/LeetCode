@@ -1,7 +1,4 @@
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-import java.util.TreeSet;
+import java.util.*;
 
 /**
  * Created by why on 10/13/15.
@@ -86,6 +83,66 @@ public class Solution22 {
         area -= coverLong * coverWide;
         return area;
     }
+    /* 224 */
+    public int calculate(String s) {
+        if (s == null) return 0;
+        s = s.replaceAll(" ", "");
+        if (s.length() == 0) return 0;
+        Stack<String> stack = new Stack<String>();
+        int index = 0, len = s.length();
+        while (index < len) {
+            char ch = s.charAt(index);
+            if (ch == '+' || ch == '-' || ch == '(') {
+                stack.push(String.valueOf(ch));
+                index ++;
+                continue;
+            }
+            if (ch == ')') {
+                int num = 0, sum = 0;
+                String cur;
+                while (!stack.peek().equals("(")) {
+                    cur = stack.pop();
+                    if (cur.equals("-")) {
+                        num = 0 - num;
+                        sum += num;
+                    }
+                    else if (cur.equals("+")){
+                        sum += num;
+                    } else {
+                        num = Integer.valueOf(cur);
+                    }
+                }
+                stack.pop();
+                sum += num;
+                stack.push(String.valueOf(sum));
+                index ++;
+                continue;
+            }
+            StringBuilder sb = new StringBuilder();
+            sb.append(ch);
+            index ++;
+            while (index < len && s.charAt(index) >= '0' && s.charAt(index) <= '9') {
+                sb.append(s.charAt(index));
+                index ++;
+            }
+            stack.push(sb.toString());
+        }
+        int num = 0, sum = 0;
+        String cur;
+        while (! stack.isEmpty()) {
+            cur = stack.pop();
+            if (cur.equals("-")) {
+                num = 0 - num;
+                sum += num;
+            } else if (cur.equals("+")) {
+                sum += num;
+            } else {
+                num = Integer.valueOf(cur);
+            }
+        }
+        sum += num;
+        return sum;
+    }
     /* 226 */
     public TreeNode invertTree(TreeNode root) {
         if (root != null)
@@ -116,6 +173,60 @@ public class Solution22 {
             node.right = temp;
         }
         return root;
+    }
+    /* 227 */
+    public int calculate2(String s) {
+        if (s == null) return 0;
+        s = s.replaceAll(" ", "");
+        if (s.length() == 0) return 0;
+        int index = 0, len = s.length();
+        Stack<String> stack = new Stack<String>();
+        while (index < len) {
+            char ch = s.charAt(index);
+            if (ch == '*' || ch == '/') {
+                int num = Integer.valueOf(stack.pop());
+                StringBuilder sb = new StringBuilder();
+                index ++;
+                while (index < len && s.charAt(index) >= '0' && s.charAt(index) <= '9') {
+                    sb.append(s.charAt(index));
+                    index ++;
+                }
+                int next = Integer.valueOf(sb.toString());
+                if (ch == '*') {
+                    stack.push(String.valueOf(num * next));
+                } else {
+                    stack.push(String.valueOf(num / next));
+                }
+                continue;
+            } else if (ch == '+' || ch == '-') {
+                stack.push(String.valueOf(ch));
+                index ++;
+                continue;
+            }
+            StringBuilder sb = new StringBuilder();
+            sb.append(ch);
+            index ++;
+            while (index < len && s.charAt(index) >= '0' && s.charAt(index) <= '9') {
+                sb.append(s.charAt(index));
+                index ++;
+            }
+            stack.push(sb.toString());
+        }
+        int num = 0, sum = 0;
+        String cur;
+        while (! stack.isEmpty()) {
+            cur = stack.pop();
+            if (cur.equals("-")) {
+                num = 0 - num;
+                sum += num;
+            } else if (cur.equals("+")) {
+                sum += num;
+            } else {
+                num = Integer.valueOf(cur);
+            }
+        }
+        sum += num;
+        return sum;
     }
     /* 228 */
     public List<String> summaryRanges(int[] nums) {

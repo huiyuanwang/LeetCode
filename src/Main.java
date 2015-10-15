@@ -1,20 +1,26 @@
+import java.lang.reflect.Array;
+import java.util.*;
+
 /**
  * Created by why on 8/31/15.
  */
 public class Main {
     public static void main(String[] args) {
-        int[] input = {1, 4, 4};
-        MyStack stack = new MyStack();
-        stack.push(1);
-        stack.pop();
-        System.out.println(stack.empty());
-
-        //Solution21 solution = new Solution21();
-        //int res = solution.minSubArrayLen(4, input);
-        //int res = flipWord(input);
-
-        //long res = getLCM(Integer.MAX_VALUE, Integer.MAX_VALUE);
-        //System.out.println(res);
+        int[][] array = {{1}, {}, {2, 3, 4}, {5, 6}, {}, {}, {7, 8, 9}, {}};
+        ArrayIterator iter = new ArrayIterator(array);
+        //iter.remove();
+        while (iter.hasNext()) {
+            System.out.println(iter.next());
+            if (iter.hasNext()) {
+                iter.next();
+                iter.remove();
+                //iter.remove();
+            }
+        }
+        List<String> output1 = Airbnb.parseCSV("Jane,Roberts,janer@msn.com,\"San Francisco, CA\",0");
+        System.out.println(output1);
+        List<String> output2 = Airbnb.parseCSV("\"Alexandra \"\"Alex\"\"\",Menendez,alex.menendez@gmail.com,Miami,1");
+        System.out.println(output2);
 
     }
 

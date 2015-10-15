@@ -24,8 +24,10 @@ public class Trie {
             }
 
             children = node.children;
-            if (i == word.length() - 1)
+            if (i == word.length() - 1) {
                 node.isLeaf = true;
+                node.word = word;
+            }
         }
     }
 
