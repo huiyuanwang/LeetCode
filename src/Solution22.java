@@ -259,6 +259,38 @@ public class Solution22 {
         res.add(sb.toString());
         return res;
     }
+    /* 229 */
+    public List<Integer> majorityElement(int[] nums) {
+        List<Integer> res = new LinkedList<Integer>();
+        if (nums == null || nums.length == 0) return res;
+        Integer n1 = null, n2 = null;
+        int c1 = 0, c2 = 0;
+        for (int num: nums) {
+            if (n1 != null && n1 == num) {
+                c1 ++;
+            } else if (n2 != null && n2 == num) {
+                c2 ++;
+            } else if (c1 == 0) {
+                c1 ++;
+                n1 = num;
+            } else if (c2 == 0) {
+                c2 ++;
+                n2 = num;
+            } else {
+                c1 --;
+                c2 --;
+            }
+        }
+        c1 = 0;
+        c2 = 0;
+        for (int num: nums) {
+            if (n1 != null && num == n1) c1 ++;
+            if (n2 != null && num == n2) c2 ++;
+        }
+        if (c1 > nums.length / 3) res.add(n1);
+        if (c2 > nums.length / 3) res.add(n2);
+        return res;
+    }
 
 }
 

@@ -2,12 +2,43 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * Created by why on 10/13/15.
  */
 public class Solution23 {
-
+    /* 230 */
+    public int kthSmallest(TreeNode root, int k) {
+        if (root == null) return 0;
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        TreeNode node = root;
+        int res = 0;
+        while (node != null || ! stack.isEmpty()) {
+            if (node != null) {
+                stack.push(node);
+                node = node.left;
+            } else {
+                node = stack.pop();
+                k --;
+                if (k == 0) {
+                    res = node.val;
+                    break;
+                }
+                node = node.right;
+            }
+        }
+        return res;
+    }
+    /* 231 */
+    public boolean isPowerOfTwo(int n) {
+        int count = 0;
+        while (n > 0) {
+            count += n & 0x1;
+            n = n >>> 1;
+        }
+        return count == 1;
+    }
     /* 234 */
     public boolean isPalindrome(ListNode head) {
         if (head == null || head.next == null) return true;
