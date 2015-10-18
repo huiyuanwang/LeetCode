@@ -2,6 +2,22 @@
  * Created by why on 10/16/15.
  */
 public class Solution28 {
+    /* 283 */
+    public void moveZeroes(int[] nums) {
+        int index = 0;
+        int len = nums.length;
+        for (int i = 0; i < len; i ++) {
+            if (nums[i] != 0) {
+                nums[index] = nums[i];
+                index ++;
+            }
+        }
+        while (index < len) {
+            nums[index] = 0;
+            index ++;
+        }
+    }
+    /* 289 */
     public void gameOfLife (int[][] board) {
         if( board.length <= 0 || board[0].length <= 0) return;
         int row = board.length;
@@ -18,8 +34,7 @@ public class Solution28 {
         }
         for(int i = 0; i < row; i ++) {
             for(int j = 0; j < col; j ++) {
-                if(board[i][j] / 10 ==1) board[i][j] = 1;
-                else board[i][j] = 0;
+                board[i][j] = board[i][j] / 10;
             }
         }
     }

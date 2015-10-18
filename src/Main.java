@@ -5,9 +5,10 @@ import java.util.*;
  */
 public class Main {
     public static void main(String[] args) {
-        int[][] array = {{1}, {}, {2, 3, 4}, {5, 6}, {}, {}, {7, 8, 9}, {}};
-        ArrayIterator iter = new ArrayIterator(array);
+        //int[][] array = {{1}, {}, {2, 3, 4}, {5, 6}, {}, {}, {7, 8, 9}, {}};
+        //ArrayIterator iter = new ArrayIterator(array);
         //iter.remove();
+        /*
         while (iter.hasNext()) {
             System.out.println(iter.next());
             if (iter.hasNext()) {
@@ -16,11 +17,16 @@ public class Main {
                 //iter.remove();
             }
         }
-        List<String> output1 = ATest.parseCSV("Jane,Roberts,janer@msn.com,\"San Francisco, CA\",0");
-        System.out.println(output1);
-        List<String> output2 = ATest.parseCSV("\"Alexandra \"\"Alex\"\"\",Menendez,alex.menendez@gmail.com,Miami,1");
-        System.out.println(output2);
-
+        */
+        //List<String> output1 = ATest.parseCSV("Jane,Roberts,janer@msn.com,\"San Francisco, CA\",0");
+        //System.out.println(output1);
+        //List<String> output2 = ATest.parseCSV("\"Alexandra \"\"Alex\"\"\",Menendez,alex.menendez@gmail.com,Miami,1");
+        //System.out.println(output2);
+        int[] nums = {1,0,0,2,3};
+        Solution23 solution = new Solution23();
+        nums = solution.productExceptSelf(nums);
+        for (int elem: nums)
+            System.out.println(elem);
     }
 
     public static int flipWord(int[] arr) {
