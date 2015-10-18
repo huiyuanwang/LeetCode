@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18e7a7a8-6f7b-4238-876e-82cc3f22b499" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MyQueue.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Solution24.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LeetCode/Main.class" afterPath="$PROJECT_DIR$/out/production/LeetCode/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Solution23.java" afterPath="$PROJECT_DIR$/src/Solution23.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Solution28.java" afterPath="$PROJECT_DIR$/src/Solution28.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Solution21.java" afterPath="$PROJECT_DIR$/src/Solution21.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Solution24.java" afterPath="$PROJECT_DIR$/src/Solution24.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Solution8.java" afterPath="$PROJECT_DIR$/src/Solution8.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LeetCode.iws" />
@@ -40,33 +37,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Solution23.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Solution23.java">
+      <file leaf-file-name="Solution8.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Solution8.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="135" column="5" selection-start-line="135" selection-start-column="5" selection-end-line="135" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Solution24.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Solution24.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+              <caret line="240" column="37" selection-start-line="240" selection-start-column="37" selection-end-line="240" selection-end-column="37" />
               <folding>
-                <element signature="e#262#282#0" expanded="true" />
+                <element signature="e#6414#6423#0" expanded="true" />
+                <element signature="e#7107#7116#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Solution28.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Solution28.java">
+      <file leaf-file-name="Solution24.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Solution24.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61264825">
-              <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.9881423">
+              <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#710#719#0" expanded="true" />
+                <element signature="e#1890#1910#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Solution21.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Solution21.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="124" column="5" selection-start-line="124" selection-start-column="5" selection-end-line="124" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -112,7 +114,6 @@
         <option value="$PROJECT_DIR$/src/structures/UndirectedGraphNode.java" />
         <option value="$PROJECT_DIR$/src/UndirectedGraphNode.java" />
         <option value="$PROJECT_DIR$/src/Solution13.java" />
-        <option value="$PROJECT_DIR$/src/Solution8.java" />
         <option value="$PROJECT_DIR$/src/MinStack.java" />
         <option value="$PROJECT_DIR$/src/Solution15.java" />
         <option value="$PROJECT_DIR$/src/Solution16.java" />
@@ -126,7 +127,6 @@
         <option value="$PROJECT_DIR$/src/Solution14.java" />
         <option value="$PROJECT_DIR$/src/Solution25.java" />
         <option value="$PROJECT_DIR$/src/WordDictionary.java" />
-        <option value="$PROJECT_DIR$/src/Solution21.java" />
         <option value="$PROJECT_DIR$/src/MyStack.java" />
         <option value="$PROJECT_DIR$/src/ArrayIterator.java" />
         <option value="$PROJECT_DIR$/src/TrieNode.java" />
@@ -141,8 +141,10 @@
         <option value="$PROJECT_DIR$/src/MyQueue.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Solution23.java" />
-        <option value="$PROJECT_DIR$/src/Solution24.java" />
         <option value="$PROJECT_DIR$/src/Solution28.java" />
+        <option value="$PROJECT_DIR$/src/Solution8.java" />
+        <option value="$PROJECT_DIR$/src/Solution21.java" />
+        <option value="$PROJECT_DIR$/src/Solution24.java" />
       </list>
     </option>
   </component>
@@ -186,8 +188,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -222,6 +222,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -484,12 +486,18 @@
       <option name="project" value="LOCAL" />
       <updated>1445030894259</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="2015-10-17">
+      <created>1445147303187</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1445147303187</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="184" y="23" width="1104" height="877" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -504,7 +512,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23352166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23352166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -536,7 +544,8 @@
     <MESSAGE value="2015-10-14" />
     <MESSAGE value="2015-10-14-2" />
     <MESSAGE value="2015-10-15" />
-    <option name="LAST_COMMIT_MESSAGE" value="2015-10-15" />
+    <MESSAGE value="2015-10-17" />
+    <option name="LAST_COMMIT_MESSAGE" value="2015-10-17" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -767,24 +776,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Solution8.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35667107">
-          <caret line="92" column="43" selection-start-line="92" selection-start-column="40" selection-end-line="92" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Solution9.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="77" column="27" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Solution21.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="127" column="10" selection-start-line="127" selection-start-column="10" selection-end-line="127" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -875,14 +870,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.4397905">
           <caret line="126" column="5" selection-start-line="126" selection-start-column="5" selection-end-line="126" selection-end-column="5" />
-          <folding>
-            <element signature="e#265#273#0" expanded="true" />
-            <element signature="e#729#737#0" expanded="true" />
-            <element signature="e#973#988#0" expanded="true" />
-            <element signature="e#1034#1043#0" expanded="true" />
-            <element signature="e#3177#3197#0" expanded="true" />
-            <element signature="e#3254#3271#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -900,14 +887,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Solution23.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -916,21 +895,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Solution24.java">
+    <entry file="file://$PROJECT_DIR$/src/Solution28.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6142669">
+          <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Solution8.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="240" column="37" selection-start-line="240" selection-start-column="37" selection-end-line="240" selection-end-column="37" />
           <folding>
-            <element signature="e#262#282#0" expanded="true" />
+            <element signature="e#6414#6423#0" expanded="true" />
+            <element signature="e#7107#7116#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Solution28.java">
+    <entry file="file://$PROJECT_DIR$/src/Solution21.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61264825">
-          <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="124" column="5" selection-start-line="124" selection-start-column="5" selection-end-line="124" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Solution24.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9881423">
+          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#710#719#0" expanded="true" />
+            <element signature="e#1890#1910#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,6 +1,4 @@
-import java.util.Arrays;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * Created by why on 9/4/15.
@@ -210,6 +208,44 @@ public class Solution8 {
             nums1[n - 1] = nums2[n - 1];
             n --;
         }
+    }
+    /* 89 */
+    public List<Integer> grayCode(int n) {
+        List<Integer> res = new LinkedList<Integer>();
+        if (n == 0) return res;
+        int[] num = new int[n];
+        helper(n, 0, num, res);
+        return res;
+    }
+    public void helper(int n, int index, int[] num, List<Integer> res) {
+        if (index == n) {
+            int sum = 0;
+            for (int i = 0; i < n; i ++) {
+                sum += num[i] * (1 << (n - i - 1));
+            }
+            res.add(sum);
+            return;
+        }
+        int[] newNum = Arrays.copyOf(num, n);
+        helper(n, index + 1, newNum, res);
+        num[index] = 1;
+        helper(n, index + 1, num, res);
+    }
+    public List<Integer> grayCode2(int n) {
+        if(n == 0) {
+            List<Integer> res = new ArrayList<Integer>();
+            res.add(0);
+            return res;
+        }
+
+        List<Integer> res = grayCode2(n-1);
+        int addNumber = 1 << (n - 1);
+        int len = res.size();
+
+        for(int i = len - 1; i >= 0; i --) {
+            res.add(addNumber + res.get(i));
+        }
+        return res;
     }
 
 }

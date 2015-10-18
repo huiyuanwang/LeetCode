@@ -98,6 +98,31 @@ public class Solution21 {
 
         return Math.max(dl[nums.length - 1], dh[nums.length - 1]);
     }
+    /* 215 */
+    public int findKthLargest(int[] nums, int k) {
+        if (nums == null || nums.length < 1 || k < 1) return 0;
+        int len = nums.length;
+        return getKthLargest(len - k + 1, 0, len - 1, nums);
+    }
+    public int getKthLargest(int k, int start, int end, int[] nums) {
+        int pivot = nums[end];
+        int left = start, right = end;
+        while (left < right) {
+            while (left < right && nums[left] < pivot)
+                left ++;
+            while (left < right && pivot <= nums[right])
+                right --;
+            int temp = nums[left];
+            nums[left] = nums[right];
+            nums[right] = temp;
+        }
+        nums[end] = nums[left];
+        nums[left] = pivot;
+
+        if (left + 1 == k) return nums[left];
+        else if (left + 1 < k) return getKthLargest(k, left + 1, end, nums);
+        else return getKthLargest(k, start, left - 1, nums);
+    }
     /* 216 */
     public List<List<Integer>> combinationSum3(int k, int n) {
         List<List<Integer>> res = new LinkedList<List<Integer>>();
