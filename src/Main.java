@@ -22,10 +22,13 @@ public class Main {
         //System.out.println(output1);
         //List<String> output2 = ATest.parseCSV("\"Alexandra \"\"Alex\"\"\",Menendez,alex.menendez@gmail.com,Miami,1");
         //System.out.println(output2);
-        int[] nums = {1,0,0,2,3};
-        Solution23 solution = new Solution23();
-        nums = solution.productExceptSelf(nums);
-        for (int elem: nums)
+        int[] nums = {0, 1};
+        int[] res = new int[2];
+        for (int elem: res)
+            System.out.println(elem);
+        Solution26 solution = new Solution26();
+        res = solution.singleNumber(nums);
+        for (int elem: res)
             System.out.println(elem);
     }
 

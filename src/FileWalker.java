@@ -4,17 +4,21 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Arrays;
+import java.util.*;
 
 /**
  * Created by why on 10/16/15.
  */
 public class FileWalker {
+    HashMap<File, BasicFileAttributes> hash = new HashMap<>();
+    HashMap<Long, List<File>> categories = new HashMap<>();
 
-    public void walk( String path ) {
+    public void walk( String path ) throws IOException {
 
         File root = new File( path );
         File[] list = root.listFiles();
@@ -27,7 +31,36 @@ public class FileWalker {
                 System.out.println( "Dir:" + f.getAbsoluteFile() );
             }
             else {
+                hash.put(f, Files.readAttributes(f.toPath(), BasicFileAttributes.class));
+
+                long size = Files.size(f.toPath());
+                if (categories.containsKey(size)) {
+                    List<File> files = categories.get(size);
+                    files.add(f);
+                    categories.put(size, files);
+                } else {
+                    List<File> files = new LinkedList<>();
+                    files.add(f);
+                    categories.put(size, files);
+                }
+
                 System.out.println( "File:" + f.getAbsoluteFile() );
+            }
+        }
+    }
+
+    public void firstCategory(HashMap<File, BasicFileAttributes> hash) {
+        for (File file: hash.keySet()) {
+            BasicFileAttributes attributes = hash.get(file);
+            long size = attributes.size();
+            if (categories.containsKey(size)) {
+                List<File> files = categories.get(size);
+                files.add(file);
+                categories.put(size, files);
+            } else {
+                List<File> files = new LinkedList<>();
+                files.add(file);
+                categories.put(size, files);
             }
         }
     }
@@ -55,6 +88,7 @@ public class FileWalker {
         byte[] digest_1 = md_1.digest();
         byte[] digest_2 = md_2.digest();
 
+
         try (InputStream is1 = Files.newInputStream(file1);
              InputStream is2 = Files.newInputStream(file2)) {
             // Compare byte-by-byte.
@@ -70,9 +104,32 @@ public class FileWalker {
         return true;
     }
 
-    public static void main(String[] args) {
+    public static String getMD5Sum(String filePath) throws Exception{
+        MessageDigest md = MessageDigest.getInstance("MD5");
+
+        try (InputStream is = Files.newInputStream(Paths.get(filePath))) {
+            DigestInputStream dis = new DigestInputStream(is, md);
+            int read = 0;
+            do{
+                read = dis.read();
+            }while(read > -1);
+        }
+        byte[] digest = md.digest();
+        digest.toString();
+        String result = "";
+
+        for (int i=0; i < digest.length; i++) {
+            result += Integer.toString((digest[i] & 0xff) + 0x100, 16).substring(1);
+        }
+
+        System.out.println(result);
+        return result;
+    }
+
+    public static void main(String[] args) throws Exception {
         FileWalker fw = new FileWalker();
-        fw.walk("src/" );
+        fw.walk("src/");
+        getMD5Sum("/Users/why/IdeaProjects/LeetCode/src/Counter.java");
     }
 
 

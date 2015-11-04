@@ -30,6 +30,7 @@ public class WordDictionary {
     public boolean search(String word) {
         return searchNode(word, root);
     }
+
     public boolean searchNode(String word, TrieNode node) {
         if (node == null) return false;
         if (word.length() == 0) return true;
